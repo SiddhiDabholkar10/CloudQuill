@@ -7,7 +7,7 @@ const router = express.Router();
 
 
 //
-router.get('/',(req,res)=>{
+router.post('/',(req,res)=>{
 
     try{
         console.log(req.body);
