@@ -17,20 +17,36 @@ router.post('/createuser',[
     .matches(/[a-z]/).withMessage('Password must contain at least one lowercase letter.') // At least one lowercase letter
     .matches(/\d/).withMessage('Password must contain at least one number.') // At least one number
     .matches(/[@$!%*?&#]/).withMessage('Password must contain at least one special character.') // At least one special character
-  ], (req,res)=>{
-
+  ], async (req,res)=>{
+    //if there are errors -> return bad requesta and the error description
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    User.create({
+
+    //check whether the user with the same email exists already
+    try{
+        let user = await User.findOne({email: req.body.email});
+    console.log(user);
+    if(user){
+        return res.status(400).json({error:"Sorry a user with this email already exists"});
+    }
+    user = await User.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
-      }).then(user => res.json(user))
-      .catch(err=>{console.log(err)
-        res.json({error:'Please enter a unique value for email',message:err.message});
       })
+      
+    //    .then(user => res.json(user))
+    //   .catch(err=>{console.log(err)
+    //     res.json({error:'Please enter a unique value for email',message:err.message});
+      //})
+      res.json(user);
+    }catch(error){
+            console.error(error.message);
+            res.status(500).send("Some Error Occured");
+    }
+    
   
     
     
