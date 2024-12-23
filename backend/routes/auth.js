@@ -14,8 +14,8 @@ const fetchuser = require('../middleware/fetchuser');
 
 const JWT_SECRET = 'Cloud10Quil@JWT_SeCreT';
 
-// ROUTE 1: Create a User using : POST "http://localhost:5000/api/auth/createuser". No Login required
-router.post('/createuser',[
+// ROUTE 1: Create a User using : POST "http://localhost:5000/api/auth/cruser". No Login required
+router.post('/cruser',[
    
     body('username','Enter a valid name').isLength({ min: 3 }),
     body('email', 'Enter a valid email').isEmail(),
@@ -104,8 +104,8 @@ router.post('/login',[
   }); 
 
 
-//ROUTE 3: Get loggedin User Details using : POST "http://localhost:5000/api/auth/getuser". Login required
-router.post('/getuser', fetchuser,  async (req,res)=>{
+//ROUTE 3: Get loggedin User Details using : POST "http://localhost:5000/api/auth/guser". Login required
+router.post('/guser', fetchuser,  async (req,res)=>{
     //if there are errors -> return bad requesta and the error description
     
 
