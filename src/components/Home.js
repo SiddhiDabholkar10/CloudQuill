@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import noteContext from "../context/notes/noteContext";
+
+
 
 export const Home = () => {
+  const context = useContext( noteContext);
+  const {notes,setNotes} = context;
+
   return (
     <div className="container my-4">
       {/* Main Header */}
@@ -89,7 +95,9 @@ export const Home = () => {
             fontStyle: "italic",
           }}
         >
-          No notes yet. Start by adding one!
+         {notes.map((note)=>{
+          return note.title;
+         })}
         </p>
       </div>
     </div>

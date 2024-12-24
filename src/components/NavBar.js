@@ -8,7 +8,7 @@ import {
 } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { FaSearch ,  FaFeatherAlt} from "react-icons/fa"; // Importing search icon from react-icons
-import React, { useEffect } from "react";
+import React from "react";
 
 const NavBar = () => {
   let location = useLocation();
