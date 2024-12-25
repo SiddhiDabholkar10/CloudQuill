@@ -7,7 +7,7 @@ import {
   Button,
 } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
-import { FaSearch ,  FaFeatherAlt} from "react-icons/fa"; // Importing search icon from react-icons
+import { FaSearch, FaFeatherAlt } from "react-icons/fa"; // Importing search icon from react-icons
 import React from "react";
 
 const NavBar = () => {
@@ -23,11 +23,13 @@ const NavBar = () => {
       {/* New background color */}
       <Container>
         {/* Navbar.Brand with Link for navigation */}
-        <FaFeatherAlt  style={{
-              marginRight: "10px",
-              color: "white",
-              fontSize: "2rem", // Increased icon size
-            }} />
+        <FaFeatherAlt
+          style={{
+            marginRight: "10px",
+            color: "white",
+            fontSize: "2rem", // Increased icon size
+          }}
+        />
         <Navbar.Brand
           as={Link}
           to="/"
@@ -61,13 +63,22 @@ const NavBar = () => {
               style={{
                 color: "white",
                 fontSize: "1.1rem",
-                marginRight: "20px",
               }}
               className={`nav-link-hover ${
                 location.pathname === "/" ? "fw-bold" : ""
               } `}
             >
               Home
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/mynotes"
+              style={{ color: "white", fontSize: "1.1rem" }}
+              className={`nav-link-hover ${
+                location.pathname === "/mynotes" ? "fw-bold" : ""
+              } `}
+            >
+              My Notes
             </Nav.Link>
             <Nav.Link
               as={Link}
