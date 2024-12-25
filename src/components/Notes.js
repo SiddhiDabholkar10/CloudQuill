@@ -3,18 +3,23 @@ import { Container, Row, Col } from "react-bootstrap";
 import { FaPlusCircle } from "react-icons/fa";
 import noteContext from "../context/notes/noteContext";
 import NoteItem from "./NoteItem";
-import AddNote from "./AddNote";
+
+import { useNavigate } from "react-router-dom"; 
 
 const Notes = () => {
   const { notes, getNotes } = useContext(noteContext);
+  const navigate = useNavigate();
   useEffect(() => {
     getNotes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const handleAddNoteClick = () => {
+    navigate("/addnote");  // Navigate to the AddNote component
+  };
 
   return (
     <>
-      <AddNote></AddNote>
+      
 
       <div
         style={{
@@ -46,6 +51,7 @@ const Notes = () => {
                 alignItems: "center",
                 gap: "8px",
               }}
+              onClick={handleAddNoteClick}
             >
               <FaPlusCircle />
               Add Note

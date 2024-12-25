@@ -7,6 +7,7 @@ import NoteState from "./context/notes/NoteState";
 import OneNote from "./components/OneNote";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AddNote from "./components/AddNote";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route exact path="/about" element={<About />} />
               <Route exact path="/mynotes" element={<Notes />} />
               <Route exact path="/onenote" element={<OneNote/>} />
+              <Route exact path="/addnote" element={<AddNote/>}></Route>
             </Routes>
           </div>
         </Router>
