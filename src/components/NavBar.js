@@ -12,10 +12,13 @@ import React from "react";
 
 const NavBar = () => {
   let location = useLocation();
+  /**
+   
   React.useEffect(() => {
     // Google Analytics
     console.log(location.pathname);
-  }, [location]);
+  }, [location]); 
+  **/
 
   return (
     <Navbar expand="lg" style={{ backgroundColor: "#1a2a3a", color: "white" }}>

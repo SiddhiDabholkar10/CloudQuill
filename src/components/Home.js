@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
 
-import AddNote from "./AddNote";
+//import AddNote from "./AddNote";
 
 
 

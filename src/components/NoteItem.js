@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import { FaEdit, FaTrash, FaEye } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import NoteContext from "../context/notes/noteContext";
 
 const NoteItem = (props) => {
+    const {deleteNote} = useContext(NoteContext);
   const { note } = props;
   const navigate = useNavigate();
 
@@ -61,6 +63,8 @@ const NoteItem = (props) => {
           <Button
             variant="outline-danger"
             className="p-2"
+            onClick={() => { deleteNote(note._id); }}
+
             style={{
               borderRadius: "50%",
               width: "40px",
