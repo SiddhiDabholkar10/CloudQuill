@@ -69,7 +69,13 @@ router.post('/anote',fetchuser,[
 
         //cross check the existing note's user-id against the user id of the logged in user - that we have gotten from fetchuser.js
         if(existingnote.user.toString()!== req.user.id){
-           return  res.status(404).send("Invalid Request");
+            
+           
+           return res.status(404).json({
+            error: "Invalid Request",
+            existingNoteUser: existingnote.user.toString(),
+            requestingUser: req.user.id
+        });
         }
         updatednote = await Note.findByIdAndUpdate (req.params.id,{$set:newNote},{new:true});
         return res.json(updatednote);

@@ -47,6 +47,7 @@ const NoteItem = (props) => {
             <FaEye />
           </Button>
           <Button
+         
             variant="outline-primary"
             className="p-2"
             style={{

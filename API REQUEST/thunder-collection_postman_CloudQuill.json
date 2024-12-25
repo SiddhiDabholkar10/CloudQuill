@@ -1,0 +1,237 @@
+{
+    "info": {
+        "_postman_id": "1d209757-25e4-47fc-ae3f-cc8127f83a35",
+        "name": "CloudQuill",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "item": [
+                {
+                    "name": "Create a new user",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/auth/cruser",
+                            "path": [
+                                "api",
+                                "auth",
+                                "cruser"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"username\":\"TestUser2\",\n  \"email\": \"testuser2@gmail.com\",\n  \"password\" : \"Testuser@2\"\n  \n  \n}"
+                        }
+                    }
+                },
+                {
+                    "name": "User Login Using Credentials",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/auth/login",
+                            "path": [
+                                "api",
+                                "auth",
+                                "login"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \n \"email\": \"testuser2@gmail.com\",\n  \"password\" : \"Testuser@2\"\n  \n  \n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Get User Data",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/auth/guser",
+                            "path": [
+                                "api",
+                                "auth",
+                                "guser"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "auth-token",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc2YmI2YzdmYzdkZjNjMTUyYmM2MjdkIn0sImlhdCI6MTczNTExMjQwNH0.OfOs-Pk9iMcmz1rpQUxWSM4hiKmfoOYXnc-Drj7MELU"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Notes",
+            "item": [
+                {
+                    "name": "Fetch All Notes",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5000/api/notes/fnotes",
+                            "path": [
+                                "api",
+                                "notes",
+                                "fnotes"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "auth-token",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc2YmI2YzdmYzdkZjNjMTUyYmM2MjdkIn0sImlhdCI6MTczNTExMjQwNH0.OfOs-Pk9iMcmz1rpQUxWSM4hiKmfoOYXnc-Drj7MELU"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Add Note",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/notes/anote",
+                            "path": [
+                                "api",
+                                "notes",
+                                "anote"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "auth-token",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc2YmI2YzdmYzdkZjNjMTUyYmM2MjdkIn0sImlhdCI6MTczNTExMjQwNH0.OfOs-Pk9iMcmz1rpQUxWSM4hiKmfoOYXnc-Drj7MELU"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"title\":\"Test User 2 Note 1\",\n  \"description\" : \"Test User 2 Note1 TU2 to be deleted\",\n  \"tag\" : \"TU2\"\n  \n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Update Note",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:5000/api/notes/unote/676bb75afc7df3c152bc6289",
+                            "path": [
+                                "api",
+                                "notes",
+                                "unote",
+                                "676bb75afc7df3c152bc6289"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "auth-token",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc2YmI2YzdmYzdkZjNjMTUyYmM2MjdkIn0sImlhdCI6MTczNTExMjQwNH0.OfOs-Pk9iMcmz1rpQUxWSM4hiKmfoOYXnc-Drj7MELU"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"title\":\"Test User 2 Note 1 UPDATED \",\n  \"description\" : \"Note 1 TU2 to be deleted soon\",\n  \"tag\" : \"TU2\"\n  \n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Note",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:5000/api/notes/dnote/676bb75afc7df3c152bc6289",
+                            "path": [
+                                "api",
+                                "notes",
+                                "dnote",
+                                "676bb75afc7df3c152bc6289"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "auth-token",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc2YmI2YzdmYzdkZjNjMTUyYmM2MjdkIn0sImlhdCI6MTczNTExMjQwNH0.OfOs-Pk9iMcmz1rpQUxWSM4hiKmfoOYXnc-Drj7MELU"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

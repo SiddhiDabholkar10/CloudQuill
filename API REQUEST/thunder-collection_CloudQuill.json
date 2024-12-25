@@ -1,0 +1,169 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "CloudQuill",
+    "collectionId": "b6721c03-09c5-499b-8ea1-1fda669cfa9a",
+    "dateExported": "2024-12-25T07:44:17.764Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "2eec3ab2-6dfb-4c3c-a73f-8d723babdfff",
+            "name": "Authentication",
+            "containerId": "",
+            "created": "2024-12-22T01:13:02.667Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "205c4b52-c715-487e-857b-4cdad3448b35",
+            "name": "Notes",
+            "containerId": "",
+            "created": "2024-12-22T03:37:23.957Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "5a830e49-b64d-4f7a-a95d-08969a2acce4",
+            "colId": "b6721c03-09c5-499b-8ea1-1fda669cfa9a",
+            "containerId": "2eec3ab2-6dfb-4c3c-a73f-8d723babdfff",
+            "name": "Create a new user",
+            "url": "http://localhost:5000/api/auth/cruser",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-12-22T01:13:24.069Z",
+            "modified": "2024-12-25T07:39:51.779Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\":\"TestUser2\",\n  \"email\": \"testuser2@gmail.com\",\n  \"password\" : \"Testuser@2\"\n  \n  \n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "2c933f0a-7df1-4723-ab6f-fa8bb6956bac",
+            "colId": "b6721c03-09c5-499b-8ea1-1fda669cfa9a",
+            "containerId": "2eec3ab2-6dfb-4c3c-a73f-8d723babdfff",
+            "name": "User Login Using Credentials",
+            "url": "http://localhost:5000/api/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-12-22T03:05:54.330Z",
+            "modified": "2024-12-25T07:40:04.998Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n \"email\": \"testuser2@gmail.com\",\n  \"password\" : \"Testuser@2\"\n  \n  \n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "e20d4fe9-d0a5-4d4f-ab6c-1fb739f88a32",
+            "colId": "b6721c03-09c5-499b-8ea1-1fda669cfa9a",
+            "containerId": "2eec3ab2-6dfb-4c3c-a73f-8d723babdfff",
+            "name": "Get User Data",
+            "url": "http://localhost:5000/api/auth/guser",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-12-22T03:33:16.970Z",
+            "modified": "2024-12-25T07:40:27.860Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc2YmI2YzdmYzdkZjNjMTUyYmM2MjdkIn0sImlhdCI6MTczNTExMjQwNH0.OfOs-Pk9iMcmz1rpQUxWSM4hiKmfoOYXnc-Drj7MELU"
+                }
+            ]
+        },
+        {
+            "_id": "25fe5e84-4a27-4144-a44a-7f90e46fed2b",
+            "colId": "b6721c03-09c5-499b-8ea1-1fda669cfa9a",
+            "containerId": "205c4b52-c715-487e-857b-4cdad3448b35",
+            "name": "Fetch All Notes",
+            "url": "http://localhost:5000/api/notes/fnotes",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-12-22T23:15:43.039Z",
+            "modified": "2024-12-25T07:40:37.123Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc2YmI2YzdmYzdkZjNjMTUyYmM2MjdkIn0sImlhdCI6MTczNTExMjQwNH0.OfOs-Pk9iMcmz1rpQUxWSM4hiKmfoOYXnc-Drj7MELU"
+                }
+            ]
+        },
+        {
+            "_id": "1cc06c5b-d0ec-444e-bd6e-4e39e6632a3a",
+            "colId": "b6721c03-09c5-499b-8ea1-1fda669cfa9a",
+            "containerId": "205c4b52-c715-487e-857b-4cdad3448b35",
+            "name": "Add Note",
+            "url": "http://localhost:5000/api/notes/anote",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-12-22T23:45:34.055Z",
+            "modified": "2024-12-25T07:42:18.223Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc2YmI2YzdmYzdkZjNjMTUyYmM2MjdkIn0sImlhdCI6MTczNTExMjQwNH0.OfOs-Pk9iMcmz1rpQUxWSM4hiKmfoOYXnc-Drj7MELU"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\":\"Test User 2 Note 1\",\n  \"description\" : \"Test User 2 Note1 TU2 to be deleted\",\n  \"tag\" : \"TU2\"\n  \n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "67669fd6-41e6-48fb-beeb-07c14c05f3ac",
+            "colId": "b6721c03-09c5-499b-8ea1-1fda669cfa9a",
+            "containerId": "205c4b52-c715-487e-857b-4cdad3448b35",
+            "name": "Update Note",
+            "url": "http://localhost:5000/api/notes/unote/676bb75afc7df3c152bc6289",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-12-23T00:37:26.752Z",
+            "modified": "2024-12-25T07:43:19.878Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc2YmI2YzdmYzdkZjNjMTUyYmM2MjdkIn0sImlhdCI6MTczNTExMjQwNH0.OfOs-Pk9iMcmz1rpQUxWSM4hiKmfoOYXnc-Drj7MELU"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\":\"Test User 2 Note 1 UPDATED \",\n  \"description\" : \"Note 1 TU2 to be deleted soon\",\n  \"tag\" : \"TU2\"\n  \n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b5869cc6-327c-4f77-b35f-13a4a609c531",
+            "colId": "b6721c03-09c5-499b-8ea1-1fda669cfa9a",
+            "containerId": "205c4b52-c715-487e-857b-4cdad3448b35",
+            "name": "Delete Note",
+            "url": "http://localhost:5000/api/notes/dnote/676bb75afc7df3c152bc6289",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-12-23T00:52:08.472Z",
+            "modified": "2024-12-25T07:44:07.691Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc2YmI2YzdmYzdkZjNjMTUyYmM2MjdkIn0sImlhdCI6MTczNTExMjQwNH0.OfOs-Pk9iMcmz1rpQUxWSM4hiKmfoOYXnc-Drj7MELU"
+                }
+            ]
+        }
+    ],
+    "ref": "ga2f9JRzGqw9NlFzhwjT6RhSC3Xz6CYolX-CXwpUDzcCXsFsVdePJ1ApqEN2M9YUNnsJCksUz90-snyqiBH00A"
+}

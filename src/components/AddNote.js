@@ -10,7 +10,7 @@ const AddNote = () => {
     const [note,setNote] = useState({title:"", description:"",tag:""})  //this is the initial state of a note
     const handleAddNote = (e) =>{
         e.preventDefault(); //to prevent page reload
-        addNote(note);
+        addNote(note.title,note.description,note.tag);
         //now send the new not to addNote
     }
 
