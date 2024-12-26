@@ -11,8 +11,8 @@ const {body,validationResult} = require('express-validator')
 
 const fetchuser = require('../middleware/fetchuser');
 
-
-const JWT_SECRET = 'Cloud10Quil@JWT_SeCreT';
+const JWT_SECRET = process.env.JWT_SECRET;
+//const JWT_SECRET = 'Cloud10Quil@JWT_SeCreT';
 
 // ROUTE 1: Create a User using : POST "http://localhost:5000/api/auth/cruser". No Login required
 router.post('/cruser',[
